@@ -6,14 +6,28 @@
 	<head>
 		<title>Final Project Home</title>
 
-		<link rel="stylesheet" type="text/css" href="{% static '/news/vendor/bootstrap/css/bootstrap.css' %}" />
 		<link rel="stylesheet" type="text/css" href="{% static '/news/css/main.css' %}" />
 
-		<script src="{% static '/news/vendor/jquery/jquery-3.3.1.min.js' %}"></script>
-		<script src="{% static '/news/vendor/jquery-ui/jquery-ui.min.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<!-- Your layout here -->
 		Hey, let's pull from the News API
+    These are articles: 
+  
+    <script type = "text/javascript">
+      var url = 'https://newsapi.org/v2/top-headlines?' +
+            'country=us&' +
+            'apiKey=65a68a78e12746beb37f5c36f5b9bedc';
+      $.getJSON([url], function(response) {
+        console.log("INside response")
+        console.log(response.articles)
+        for (i = 0; i < response.totalResults; i++) {
+          var div = document.createElement('h1');
+          div.innerHTML = response.articles[i].title;
+          $("body").append(div);
+        }
+      })
+    </script>
 	</body>
 </html>
