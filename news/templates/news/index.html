@@ -16,17 +16,24 @@
     These are articles: 
   
     <script type = "text/javascript">
+      //f50cd0c006a4749910082f385b1ba6c7
       var url = 'https://newsapi.org/v2/top-headlines?' +
             'country=us&' +
             'apiKey=65a68a78e12746beb37f5c36f5b9bedc';
       $.getJSON([url], function(response) {
         console.log("INside response")
         console.log(response.articles)
-        for (i = 0; i < response.totalResults; i++) {
-          var div = document.createElement('h1');
-          div.innerHTML = response.articles[i].title;
+        i = 0;
+        var h1 = document.createElement('h1');
+        h1.innerHTML = response.articles[i].title 
+        $("body").append(h1);
+        var div = document.createElement('div');
+        var articleURL = response.articles[i].url
+        $.getJSON(["https://api.diffbot.com/v3/article?token=f50cd0c006a4749910082f385b1ba6c7&url=" + articleURL], function(article) {
+          console.log(article);
+          div.innerHTML = article.objects[0].html;
           $("body").append(div);
-        }
+        })
       })
     </script>
 	</body>
