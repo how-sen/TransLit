@@ -25,7 +25,7 @@ SECRET_KEY = '=xv^+aqxd4b=0i(1mo4=nsjhpjj0o8h%2mk^#r9=8xt=*mx_#-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["0.0.0.0", "final_project_cs160-maxmiranda938389.codeanyapp.com"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'news.apps.NewsConfig'
 ]
 
 MIDDLEWARE = [
