@@ -12,20 +12,28 @@
 	</head>
 	<body>
 		<!-- Your layout here -->
-		Hey, let's pull from the News API
-    These are articles: 
-  
+		Hey, let's pull from the BART API
+
+		Let's say I'm at Rockridge and want to go to 24th Street station:
+		<p id="timer"></p>
+
+
     <script type = "text/javascript">
-      //f50cd0c006a4749910082f385b1ba6c7
-      var url = 'https://newsapi.org/v2/top-headlines?' +
-            'country=us&' +
-            'apiKey=65a68a78e12746beb37f5c36f5b9bedc';
+			var origin = '24th';
+			var destination = 'rock';
+      var url = 'http://api.bart.gov/api/sched.aspx?cmd=depart&orig='+ origin +'&dest=' + destination + '&key=MW9S-E7SL-26DU-VV8V&json=y';
       $.getJSON([url], function(response) {
-        console.log("INside response")
-        console.log(response.articles)
-        i = 0;
+				console.log(response.root.schedule.request.trip);
+				var trips = response.root.schedule.request.trip;
+				for (var i = 0; i < trips.length; i++){
+					var button = document.createElement('button');
+					button.innerHTML = trips[i];
+					button.onClick = createCountdown(trips[i]["@destTimeDate"],trips[i]["@destTimeMin"]);
+				}
+				// set myDate whenever
+        /*i = 0;
         var h1 = document.createElement('h1');
-        h1.innerHTML = response.articles[i].title 
+        h1.innerHTML = response.articles[i].title
         $("body").append(h1);
         var div = document.createElement('div');
         var articleURL = response.articles[i].url
@@ -33,8 +41,37 @@
           console.log(article);
           div.innerHTML = article.objects[0].html;
           $("body").append(div);
-        })
+        })*/
       })
-    </script>
+		function createCountdown(dateString, timeString) {
+			console.log(dateString +  " " +timeString);
+			var countDownDate = Date.parse(dateString +  " " +timeString);
+
+			// Update the count down every 1 second
+			var x = setInterval(function() {
+
+			  // Get todays date and time
+			  var now = new Date().getTime();
+
+			  // Find the distance between now and the count down date
+			  var distance = countDownDate - now;
+
+			  // Time calculations for days, hours, minutes and seconds
+			  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			  // Display the result in the element with id="timer"
+			  document.getElementById("timer").innerHTML = hours + "h "
+			  + minutes + "m " + seconds + "s ";
+
+			  // If the count down is finished, write some text
+			  if (distance < 0) {
+			    clearInterval(x);
+			    document.getElementById("timer").innerHTML = "EXPIRED";
+			  }
+			}, 1000);
+		}
+		</script>
 	</body>
 </html>
