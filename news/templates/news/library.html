@@ -11,16 +11,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	</head>
 	<body>
+
     <script type = "text/javascript">
-      var components = window.location.href.split("?");
-      createCountdown(components[1], components[2].replace("%20", " "));
       function createCountdown(dateString, timeString) {
         var p = document.createElement('p');
         $("body").append(p);
         $("p").attr("id","timer");
-        console.log(dateString +  " " +timeString);
         var countDownDate = Date.parse(dateString +  " " +timeString);
-        console.log(countDownDate);
         // Update the count down every 1 second
         x = setInterval(function() {
           // Get todays date and time
@@ -45,6 +42,20 @@
           }
         }, 1000);
       }
+      var components = window.location.href.split("?");
+      createCountdown(components[1], components[2].replace("%20", " "));
+      function logResults(json) {
+        console.log(json);
+      }
+      function getBook() {
+        var myURL = 'http://gutendex.com/books';
+        $.ajax({
+            url: myURL,
+            dataType: 'jsonp',
+            success: logResults
+          })
+      }
+      getBook();
     </script>
   </body>
 </html>
