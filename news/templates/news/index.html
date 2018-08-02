@@ -12,66 +12,68 @@
 	</head>
 	<body>
 		<!-- Your layout here -->
-		Hey, let's pull from the BART API
+		<h1> Where are you going? </h1>
+		<form action = "javascript:retrieveTrains()">
+			<div class = "pickOrigDest">
+				<div id = "from">
+					<h3> From: </h3> <br>
+				</div>
+				<div id = "to">
+					<h3> To: </h3> <br>
+				</div>
+			</div>
+			<input type="submit" value="See Trains">
+		</form>
 
-		Let's say I'm at Rockridge and want to go to 24th Street station:
-		<p id="timer"></p>
 
 
     <script type = "text/javascript">
-			var origin = '24th';
-			var destination = 'rock';
-      var url = 'http://api.bart.gov/api/sched.aspx?cmd=depart&orig='+ origin +'&dest=' + destination + '&key=MW9S-E7SL-26DU-VV8V&json=y';
-      $.getJSON([url], function(response) {
-				console.log(response.root.schedule.request.trip);
-				var trips = response.root.schedule.request.trip;
-				for (var i = 0; i < trips.length; i++){
-					var button = document.createElement('button');
-					button.innerHTML = trips[i];
-					button.onClick = createCountdown(trips[i]["@destTimeDate"],trips[i]["@destTimeMin"]);
-				}
-				// set myDate whenever
-        /*i = 0;
-        var h1 = document.createElement('h1');
-        h1.innerHTML = response.articles[i].title
-        $("body").append(h1);
-        var div = document.createElement('div');
-        var articleURL = response.articles[i].url
-        $.getJSON(["https://api.diffbot.com/v3/article?token=f50cd0c006a4749910082f385b1ba6c7&url=" + articleURL], function(article) {
-          console.log(article);
-          div.innerHTML = article.objects[0].html;
-          $("body").append(div);
-        })*/
-      })
-		function createCountdown(dateString, timeString) {
-			console.log(dateString +  " " +timeString);
-			var countDownDate = Date.parse(dateString +  " " +timeString);
+			function retrieveStations() {
+				var url = 'http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V&json=y'
+				$.getJSON([url], function(response) {
+					var stations = response.root.stations.station;
+					console.log(stations)
+					for (var i = 0; i < stations.length; i++) {
+						let radButton = document.createElement('input');
+						radButton.type = "radio";
+						radButton.name = "departing";
+						radButton.value = stations[i]["abbr"];
+						$("#from").append(radButton);
+						$("#from").append(stations[i]["name"]);
+						$("#from").append("<br>");
+						let toButton = radButton.cloneNode(true);
+						toButton.name = "arriving";
+						$("#to").append(toButton);
+						$("#to").append(stations[i]["name"]);
+						$("#to").append("<br>");
+	 				}
+				})
+			}
+			retrieveStations()
 
-			// Update the count down every 1 second
-			var x = setInterval(function() {
-
-			  // Get todays date and time
-			  var now = new Date().getTime();
-
-			  // Find the distance between now and the count down date
-			  var distance = countDownDate - now;
-
-			  // Time calculations for days, hours, minutes and seconds
-			  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-			  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-			  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-			  // Display the result in the element with id="timer"
-			  document.getElementById("timer").innerHTML = hours + "h "
-			  + minutes + "m " + seconds + "s ";
-
-			  // If the count down is finished, write some text
-			  if (distance < 0) {
-			    clearInterval(x);
-			    document.getElementById("timer").innerHTML = "EXPIRED";
-			  }
-			}, 1000);
-		}
+			function retrieveTrains() {
+				var origin = $("input[name='departing']:checked").val();
+				var destination = $("input[name='arriving']:checked").val();
+				console.log(origin);
+				console.log(destination);
+				var url = 'http://api.bart.gov/api/sched.aspx?cmd=depart&a=4&b=0&orig='+ origin +'&dest=' + destination + '&key=MW9S-E7SL-26DU-VV8V&json=y';
+	      $.getJSON([url], function(response) {
+					console.log(response);
+					var trips = response.root.schedule.request.trip;
+					var h1 = document.createElement('h1');
+					h1.innerHTML = "Pick a Train"
+					$("body").append(h1);
+					for (var i = 0; i < trips.length; i++){
+						let ii = i;
+						var butt = document.createElement('button');
+						butt.innerHTML = "Departing: " + trips[i]["@origTimeMin"];
+						butt.onclick = function() {
+							window.location.href = '/news/library?' + trips[ii]["@destTimeDate"] + '?' + trips[ii]["@destTimeMin"];
+						}
+						$("body").append(butt);
+					}
+	      })
+			}
 		</script>
 	</body>
 </html>
