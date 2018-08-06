@@ -16,7 +16,7 @@
     }
 
     .topbanner {
-      position: fixed;
+      position: relative;
       top: 0px;
       background-color: #f2ffe6;
       width: 100%;
@@ -46,7 +46,7 @@
       background-color: green;
     }
     #c3 {
-      background-color: green;
+      background-color: white;
     }
 
     .line {
@@ -83,74 +83,75 @@
     }
 
     .center {
-      z-index: -1;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between;
       position: relative;
-      top: 20vh;
       width: 100%;
-      height: 120vh;
+      height: 60vh;
     }
 
     #description {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 80%;
-      height: 20%;
-      font: 15px arial;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 20%;
+        font: 15px arial;
     }
 
-    .boxdiv {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: space-around;
-      position: relative;
-      width: 100%;
-      height: 120%;
-    }
-
-    .boxcol {
+    #trainline {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      justify-content: space-around;
+      position: relative;
+      width: 80%;
+      height: 20%;
+      font: 15px Georgia;
+      font-weight: bold;
     }
 
-    .box {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 28vw;
-      height: 23vw;
-      margin: 10px;
+    #trainlinebox {
       background-color: #f9f9f9;
       border-radius: 25px;
       border: 2px solid black;
-      font: 15px arial;
     }
 
+    #stations {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      position: relative;
+      width: 80%;
+      height: 60%;
+      background-color: #f9f9f9;
+      border-radius: 25px;
+      border: 2px solid black;
+    }
+
+    #station, #start, #destination {
+      width: 60vw;
+      text-align: left;
+      color: black;
+      font: 15px Georgia;
+      font-weight: bold;
+    }
+
+    .input {
+      width: 100%;
+    }
 
     #bottombanner {
       display: flex;
       align-items: center;
       justify-content: space-around;
-      position: fixed;
+      position: absolute;
       background-color: #f2ffe6;
       width: 100%;
       height: 10vh;
       bottom: 0%;
-    }
-
-    #options {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      position: relative;
-      bottom: 5%;
-      width: 80%;
-      height: 10%;
     }
 
     #arrow {
@@ -159,60 +160,56 @@
     }
     </style>
 	</head>
-	<body>
-    <div class="topbanner">
-      <div class="current">
-          <div class="circles">
-              <div id="c1" class="circle"></div>
-              <div id="c2" class="circle"></div>
-              <div id="c3" class="circle"></div>
+      <div class="topbanner">
+        <div class="current">
+            <div class="circles">
+                <div id="c1" class="circle"></div>
+                <div id="c2" class="circle"></div>
+                <div id="c3" class="circle"></div>
+            </div>
+
+            <div class="line">
+                <div id="bar"></div>
+            </div>
+        </div>
+
+        <div class="words">
+           <div id="profile"><p>PROFILE</p></div>
+           <div id="route"><p>&nbsp;&nbsp;&nbsp;&nbsp; ROUTE</p></div>
+           <div id="interests"><p>INTERESTS</p></div>
+        </div>
+      </div>
+
+      <div class="center">
+          <div id="description">
+              This region will describe the function of this screen to the user
           </div>
 
-          <div class="line">
-              <div id="bar"></div>
+          <div id="trainline">
+              <div id="trainlinetext'">Train Line</div>
+              <input id="trainlinebox" class="input" type="text" value="">
+              <div></div>
+          </div>
+
+
+          <div id="stations">
+              <div id="station"><p>Station</p>
+              <input class="input" type="text" value=""></div>
+              <div id="start"><p>Start</p>
+              <input class="input" type="text" value=""></div>
+              <div id="destination"><p>Destination</p><input class="input" type="text" value=""></div>
+              <div></div>
           </div>
       </div>
 
-      <div class="words">
-         <div id="profile"><p>PROFILE</p></div>
-         <div id="route"><p>&nbsp;&nbsp;&nbsp;&nbsp; ROUTE</p></div>
-         <div id="interests"><p>INTERESTS</p></div>
-      </div>
-    </div>
-
-    <div class="center">
-        <div id="description">
-        Choose at least 3 interests to get personalized book recommendations
-        </div>
-
-        <div class="boxdiv">
-            <div></div>
-            <div class="boxcol">
-                <div class="box"><p>Fiction</p></div>
-                <div class="box"><p>Non-Fiction</p></div>
-                <div class="box"><p>Romance</p></div>
-                <div class="box"><p>Mystery</p></div>
-                <div class="box"><p>Fantasy</p></div>
-            </div>
-            <div class="boxcol">
-                <div class="box"><p>Sci-Fi</p></div>
-                <div class="box"><p>Historical</p></div>
-                <div class="box"><p>Thriller</p></div>
-                <div class="box"><p>Biographies</p></div>
-                <div class="box"><p>Comics</p></div>
-            </div>
-            <div></div>
-        </div>
-    </div>
-
-    <div id="bottombanner">
-         <button id="back">
-             <img id ="arrow" src="https://png.icons8.com/windows/1600/left.png">
-         </button>
-         <div></div><div></div><div></div>
-         <button id="next">
-             <img id ="arrow" src="https://png.icons8.com/windows/1600/right.png">
-         </button>
-    </div>
+      <div id="bottombanner">
+       <button id="back">
+           <img id ="arrow" src="https://png.icons8.com/windows/1600/left.png">
+       </button>
+       <div></div><div></div><div></div>
+       <button id="next">
+           <img id ="arrow" src="https://png.icons8.com/windows/1600/right.png">
+       </button>
+     </div>
 	</body>
 </html>
