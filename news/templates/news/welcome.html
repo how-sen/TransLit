@@ -4,16 +4,18 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900|Raleway:100,200,300,400,500,500i,600,700,800,900" rel="stylesheet">
 <style>
 
 body{
   background-color:#e6ffff
 }
 .button1 {
+  margin-top:20px;
     float: right;
     display:block;
-    width:70px;
-    height:70px;
+    width:50px;
+    height:50px;
     line-height:50px;
     border: 2px solid #f5f5f5;
     border-radius: 50%;
@@ -27,19 +29,22 @@ body{
 }
 
 .container {
+  margin-left: 10px;
+  margin-top:20px;
     display: inline-block;
     cursor: pointer;
 }
 .title{
-  font-style:italic;
-  font-size:40px;
+  margin-left: 10px;
+  font-family: 'Raleway-bold', sans-serif;
+  font-size:25px;
 }
 
 .bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
+    width: 30px;
+    height: 4px;
     background-color: #333;
-    margin: 6px 0;
+    margin: 8px 0;
     transition: 0.4s;
 }
 
@@ -55,29 +60,44 @@ body{
     transform: rotate(45deg) translate(-8px, -8px);
 }
 .topnav input[type=text] {
-  padding: 6px;
+  padding: 10px;
   margin-top: 8px;
   font-size: 17px;
   border: none;
+  width: 70vw;
+  -moz-box-shadow:     3px 4px #ccc;
+  -webkit-box-shadow:  3px 4px #ccc;
+  box-shadow:          3px 4px #ccc;
 }
-
+.topnav{
+  display: flex;
+}
 .topnav .search-container button {
-  padding: 6px 10px;
+  margin-left: 10px;
+  padding: 5px 5px;
+  width: 35px;
+  height: 35px;
   margin-top: 8px;
-  margin-right: 16px;
+  margin-bottom: 8px;
   background: #ddd;
   font-size: 17px;
   border: none;
   cursor: pointer;
 }
 #recommanded{
- margin:30px
+font-family: 'Poppins', sans-serif;
+margin-left: 10px;
+ /* margin:30px */
  }
  #image1,#image2{
-   margin:40px;
+   display: flex;
+   margin-top:10px;
+   margin-left:30px;
+   margin-right:30px;
+   margin-bottom:30px;
  }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 300px) {
   .topnav .search-container {
     float: none;
   }
@@ -104,7 +124,7 @@ body{
     <div class="bar2"></div>
     <div class="bar3"></div>
   </div>
-  <button class="button1">profile</button>
+  <button class="button1"></button>
 </div>
 
 <br/>
@@ -112,14 +132,14 @@ body{
   Good Morning, Eric!
 </div>
 <div>
-<p>
+<p style="margin-left: 10px;">
   whatever you want to say.....
 </p>
 </div>
 <div class="topnav">
   <div class="search-container">
     <form action="/action_page.php">
-    	<button type="submit">Search</button>
+    	<button type="submit"><img src="https://cdn2.iconfinder.com/data/icons/filled-icons/493/Search-512.png" style="height:20px"></button>
       	<input type="text" placeholder="Find Book.." name="search">
     </form>
   </div>
@@ -130,17 +150,15 @@ body{
  </p>
  </div>
 <div id="image1">
- <img src="https://i.pinimg.com/564x/43/b0/a1/43b0a10e35078d5bbbf85c7b483b94f4.jpg" style ="
- height: 90px">
- <img src="https://i.pinimg.com/564x/53/99/dc/5399dcdfdfdc2650241fa21883f4deb1.jpg" style="height:90px">
-  <img src="https://i.pinimg.com/564x/31/1f/df/311fdf81e1b6ca9433826fcfbafc8d20.jpg" style="height:90px">
+ <img src="https://www.gutenberg.org/cache/epub/57641/pg57641.cover.medium.jpg" style ="
+ height: 130px;width:90px; margin:10px">
+ <img src="https://www.gutenberg.org/cache/epub/57636/pg57636.cover.medium.jpg" style="height:130px;width:90px; margin:10px">
+  <img src="https://www.gutenberg.org/cache/epub/57638/pg57638.cover.medium.jpg" style="height:130px;width:90px; margin:10px">
  </div>
  <div id="image2">
- <img src="https://i.pinimg.com/564x/bb/ed/c4/bbedc4415c15501943de782e36227da0.jpg" style ="
- height: 90px">
- <img src="https://i.pinimg.com/564x/05/50/78/0550789babfef46723cac64b79fb9fb9.jpg" style="height:90px">
-  <img src="https://i.pinimg.com/564x/16/92/8c/16928cd3be7d297d2afbb05daaf6b3f3.jpg" style ="
- height: 90px">
+ <img src="https://www.gutenberg.org/cache/epub/57630/pg57630.cover.medium.jpg" style="height:130px;width:90px; margin:10px">
+ <img src="https://www.gutenberg.org/cache/epub/57604/pg57604.cover.medium.jpg" style="height:130px;width:90px; margin:10px">
+  <img src="https://www.gutenberg.org/cache/epub/43082/pg43082.cover.medium.jpg" style="height:130px;width:90px; margin:10px">
  </div>
 
 
