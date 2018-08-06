@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+function goBack() {
+    window.history.back()
+}
+
+</script>
+<style>
+.button1 {
+    float: right;
+    display:block;
+    width:50px;
+    height:50px;
+    line-height:30px;
+    border: 2px solid #f5f5f5;
+    border-radius: 50%;
+    color:black;
+    text-align:center;
+    text-decoration:none;
+    background: lightyellow;
+    box-shadow: 0 0 3px gray;
+    font-size:15px;
+    font-weight:bold;
+    margin:10px;
+}
+.button2{
+  width:60px;
+  height:30px;
+}
+.image{
+  margin-left:50px;
+  margin-top:50px;
+  margin-right:20px;
+}
+.display{
+  display:flex;
+}
+.word{
+  margin-top:60px
+}
+.summary{
+  margin:60px
+}
+.read{
+  margin:auto;
+  display:block;
+  width:80px;
+  height:40px;
+  border-radius:20%;
+  font-size:20px;
+}
+.sum{
+  background-color:hsla(89, 43%, 51%, 0.3)
+}
+</style>
+</head>
+<body>
+<button class = "button2"onclick="goBack()">Back</button>
+<button class="button1">mark</button>
+<button class="button1">like</button>
+<div class="display">
+  <div class = "image">
+     <img src="https://images.gr-assets.com/books/1481542648l/29363501.jpg" style="width:150px;height:200px;"></div>
+  <div class= "word">
+    <h2>Fantastic Beasts</h2>
+    <p>By JK Rowling</p>
+    <button class="ty">
+    novel
+    </button>
+    <button class="ty">
+    2009
+    </button>
+  </div>
+</div>
+<div class="summary">
+<div class="sum">
+
+
+<h1>Summary</h1>
+<p>
+J.K. Rowling's screenwriting debut is captured in this exciting hardcover edition of the Fantastic Beasts and Where to Find Them screenplay.
+<br/>
+When Magizoologist Newt Scamander arrives in New York, he intends his stay to be just a brief stopover. However, when his magical case is misplaced and some of Newt's fantastic beasts escape, it spells trouble for everyone…
+<br/>
+Fantastic Beasts and Where to Find Them marks the screenwriting debut of J.K. Rowling, author of the beloved and internationally bestselling Harry Potter books. Featuring a cast of remarkable characters, this is epic, adventure-packed storytelling at its very best.
+<br/>
+Whether an existing fan or new to the wizarding world, this is a perfect addition to any reader's bookshelf.
+</p>
+</div>
+</div>
+<button class="read">
+READ
+</button>
+</body>
+</html>
