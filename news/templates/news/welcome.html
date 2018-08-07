@@ -5,11 +5,9 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900|Raleway:100,200,300,400,500,500i,600,700,800,900" rel="stylesheet">
+<link rel = "stylesheet" type = "text/css" href = "{% static '/news/css/main.css' %}"/>
 <style>
 
-body{
-  background-color:#e6ffff
-}
 .button1 {
   margin-top:20px;
     float: right;
@@ -65,25 +63,24 @@ body{
   font-size: 17px;
   border: none;
   width: 70vw;
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
   -moz-box-shadow:     3px 4px #ccc;
   -webkit-box-shadow:  3px 4px #ccc;
   box-shadow:          3px 4px #ccc;
 }
-.topnav{
+/* .topnav .search-container button {
   display: flex;
-}
-.topnav .search-container button {
   margin-left: 10px;
   padding: 5px 5px;
-  width: 35px;
-  height: 35px;
   margin-top: 8px;
   margin-bottom: 8px;
-  background: #ddd;
+  width: 35px;
+  height: 35px;
   font-size: 17px;
   border: none;
   cursor: pointer;
-}
+} */
 #recommanded{
 font-family: 'Poppins', sans-serif;
 margin-left: 10px;
@@ -139,8 +136,8 @@ margin-left: 10px;
 <div class="topnav">
   <div class="search-container">
     <form action="/action_page.php">
-    	<button type="submit"><img src="https://cdn2.iconfinder.com/data/icons/filled-icons/493/Search-512.png" style="height:20px"></button>
-      	<input type="text" placeholder="Find Book.." name="search">
+      <img src="https://cdn2.iconfinder.com/data/icons/filled-icons/493/Search-512.png" style="height:20px;position:absolute">
+      <input type="text" placeholder="Find Book.." name="search">
     </form>
   </div>
 </div>
