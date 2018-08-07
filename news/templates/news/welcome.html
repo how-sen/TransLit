@@ -112,6 +112,8 @@ height: 40px;
  }
  #image1,#image2{
    display: flex;
+   align-items: center;
+   justify-content: center;
    margin-top:10px;
    margin-left:30px;
    margin-right:30px;
@@ -143,7 +145,7 @@ height: 40px;
 .shelf {
   height: 10px;
   background-color: white;
-  width: 80vw;
+  width: 90vw;
   box-shadow: 1px 1px 3px gray;
   border: 1px solid gray;
 }
@@ -182,10 +184,9 @@ height: 40px;
  RECOMMENDED
 </div>
 <div id="image1">
- <img id="dracula" src="https://lh4.googleusercontent.com/AaAFi7Q-P9JJ_QRz3tMZq4F_F46PKJ_wjszGgplci8MrKIv7HqMtZ65dt0cL6YEeEObOSXl07vSY1-rI3RzuwU6F_EEIBgM3s8SFVuPw4x-ZyUXks5202tt23rfI2BkYmPAx9BTG" style ="
- height: 130px;width:90px; margin:10px">
- <img id="raven" src="https://lh6.googleusercontent.com/KV9NleDn05jKY_Qdm0DHzyww5rM9CMFmLZFkwkhF2Pn7DkkaZLhnDL9ltur-CU72IGFHTx_4kBKHGVNAzgGxHeF4ONeqHtboaj8eef5O9gscFQjHaUHmjXMHqyi3zp9qR6zMKQBh" style="height:130px;width:90px; margin:10px">
-<img id="frank" src="https://lh6.googleusercontent.com/1Rwrtz7QPdamQJ2MxEhlAdiIIHndTRsC_9OBiaMIHuzp-Z1dPNbW0Nr2ucm-L9kVuEiiH_M9nyN_slcCTHk12GGE17oFKCFIEx2-hrqBHzw_KQ5xxqF2-iJqZ1hBDUbgcD5wuhKY" style="height:130px;width:90px; margin:10px">
+ <button style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="dracula" src="https://lh4.googleusercontent.com/AaAFi7Q-P9JJ_QRz3tMZq4F_F46PKJ_wjszGgplci8MrKIv7HqMtZ65dt0cL6YEeEObOSXl07vSY1-rI3RzuwU6F_EEIBgM3s8SFVuPw4x-ZyUXks5202tt23rfI2BkYmPAx9BTG" style ="height: 130px;width:90px; margin:10px"></button>
+ <button style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="raven" src="https://lh6.googleusercontent.com/KV9NleDn05jKY_Qdm0DHzyww5rM9CMFmLZFkwkhF2Pn7DkkaZLhnDL9ltur-CU72IGFHTx_4kBKHGVNAzgGxHeF4ONeqHtboaj8eef5O9gscFQjHaUHmjXMHqyi3zp9qR6zMKQBh" style="height:130px;width:90px; margin:10px"></button>
+ <button onclick="frankButton()" id="frankbutton" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="frank" src="https://lh6.googleusercontent.com/1Rwrtz7QPdamQJ2MxEhlAdiIIHndTRsC_9OBiaMIHuzp-Z1dPNbW0Nr2ucm-L9kVuEiiH_M9nyN_slcCTHk12GGE17oFKCFIEx2-hrqBHzw_KQ5xxqF2-iJqZ1hBDUbgcD5wuhKY" style="height:130px;width:90px;"></button>
  </div>
  <div class="bookshelf"><div class="shelf"></div></div>
  <div class="category"><br>
@@ -201,6 +202,10 @@ height: 40px;
 <script>
 function myFunction(x) {
     document.location.href = "http://127.0.0.1:8000/news/route";
+}
+
+function frankButton() {
+    document.location.href = "http://127.0.0.1:8000/news/preview"
 }
 </script>
 
