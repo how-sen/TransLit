@@ -10,13 +10,25 @@
 <style>
 
 #topbar {
-  position: relative;
-  top: 0px;
+  position: fixed;
+  top: 0%;
+  left: 0%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 10vh;
+  height: 12.5vh;
   width: 100%;
+}
+
+#topspacer {
+  z-index: -1;
+  position: relative;
+  background-color: transparent;
+  width: 100vw;
+  height: 12.5vh;
+  top: 0%;
+  margin: 0px;
+  padding: 0px;
 }
 
 .button1 {
@@ -138,11 +150,14 @@ height: 40px;
   width: 90vw;
   box-shadow: 1px 1px 3px gray;
   border: 1px solid gray;
+  margin-bottom: 0;
 }
 
 </style>
 </head>
 <body>
+
+<div id="topspacer"></div>
 
 <div id="topbar">
   <div class="routebutton" onclick="myFunction(this)">
@@ -171,7 +186,6 @@ height: 40px;
     </form>
   </div>
 </div>
-<br/>
 <div class="category"><br>
  RECOMMENDED
 </div>
