@@ -150,7 +150,7 @@
 						div.append(h5);
 						h5.innerHTML = trips[i]["@origTimeMin"];
 						div.onclick = function() {
-							window.location.href = '/news/library?' + trips[ii]["@destTimeDate"] + '?' + trips[ii]["@destTimeMin"];
+							window.location.href = "{% url 'welcome' %}" + '?' + trips[ii]["@destTimeDate"] + '?' + trips[ii]["@destTimeMin"];
 						}
 						$("#trains").append(div);
 					}
