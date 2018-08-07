@@ -8,40 +8,47 @@
 function goBack() {
     window.history.back()
 }
+
+function readFrank() {
+    document.location.href = "http://127.0.0.1:8000/news/read"
+}
 </script>
 <style>
+
 .button1 {
     float: right;
-    display:block;
+    display:flex;
+    justify-content: center;align-items: center;
     width:50px;
     height:50px;
     line-height:30px;
-    border: 2px solid #f5f5f5;
+    border: 2px;
     border-radius: 50%;
-    color:black;
     text-align:center;
     text-decoration:none;
-    background: lightyellow;
-    box-shadow: 0 0 3px gray;
+    border: 1px solid gray;
     font-size:15px;
-    font-weight:bold;
+    /* font-weight:bold; */
     margin:10px;
-}
-.button2{
-  width:60px;
-  height:30px;
+    background-color: white;
+    -moz-box-shadow:     3px 4px #ccc;
+    -webkit-box-shadow:  3px 4px #ccc;
+    box-shadow:          3px 4px #ccc;
 }
 
+
 body {
+  background: url("/static/news/img/background.png") no-repeat fixed center;
+  background-size: cover;
   font-family: 'Poppins', sans-serif;
-  margin: 0px;
+  margin-top: 4px;
   padding: 0px;
 }
 
 .display{
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   height: 30vh;
 }
 
@@ -58,23 +65,39 @@ body {
 .topregion {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   width: 50vw;
   height: 10vh;
 }
 
 #back {
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
 }
 
 #bckbutton {
-  position: absolute;
-  left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: transparent;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: default;
+}
+
+#backicon {
+  height: 40px;
+  width: 40px;
+}
+
+#mark, #like {
+  height: 30px;
+  length: 30px;
 }
 
 #marklike {
-  align-items: flex-end;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .image {
@@ -83,6 +106,7 @@ body {
   justify-content: center;
   width: 50vw;
 }
+
 
 .word {
   display: flex;
@@ -107,7 +131,7 @@ body {
   background-color:hsla(89, 43%, 51%, 0.3);
   width: 80vw;
   margin-bottom: 10px;
-  height: 100%;
+  height: auto;
 }
 
 .sumtext{
@@ -118,8 +142,8 @@ body {
 .read{
   margin:auto;
   display:block;
-  width:80px;
-  height:40px;
+  width: 80px;
+  height: 40px;
   border-radius:20%;
   border-color: black;
   font-size:20px;
@@ -132,19 +156,22 @@ body {
   align-items: center;
   justify-content: space-around;
   position: fixed;
-  background-color: #d9d9d9;
+  background-color: #f2ffe6;
+  border: 1px solid black;
   width: 100vw;
   height: 10vh;
   bottom: 0%;
 }
 
 #spacer {
-  display: flex;
+  display: absolute;
   position: relative;
-  background-color: white;
+  background-color: #F1F1F1;
   width: 100vw;
-  height: 12.5vh;
-  top: 0%;
+  height: 15vh;
+  bottom: 0%;
+  margin: 0px;
+  padding: 0px;
 }
 
 </style>
@@ -152,21 +179,22 @@ body {
 <body>
     <div class="topbanner">
       <div id="back" class="topregion">
-        <button id="bckbutton" class = "button2" onclick="goBack()">Back</button>
+        <button id="bckbutton" class = "button2" onclick="goBack()"><img id="backicon" class ="icon" src="https://png.icons8.com/windows/1600/left.png"></button>
+        <div></div><div></div>
       </div>
       <div id="marklike" class="topregion">
-        <button class="button1">mark</button>
-        <button class="button1">like</button>
+        <button class="button1"><img id="mark" src="https://www.shareicon.net/download/2016/11/14/852124_bookmark-o.svg"></button>
+        <button class="button1"><img id="like" src="https://cdn0.iconfinder.com/data/icons/thin-voting-awards/57/thin-235_heart_favorite_like_add-512.png"></button>
       </div>
     </div>
 <div class="display">
   <div class="image">
-     <img src="https://images.gr-assets.com/books/1481542648l/29363501.jpg" style="width:150px;height:200px;"></div>
+     <img src="https://lh6.googleusercontent.com/1Rwrtz7QPdamQJ2MxEhlAdiIIHndTRsC_9OBiaMIHuzp-Z1dPNbW0Nr2ucm-L9kVuEiiH_M9nyN_slcCTHk12GGE17oFKCFIEx2-hrqBHzw_KQ5xxqF2-iJqZ1hBDUbgcD5wuhKY"style="width:150px;height:200px;"></div>
   <div class= "word">
-    <h2>Fantastic Beasts</h2>
-    <p>By JK Rowling</p>
+    <h2>Frankenstein</h2>
+    <p>Mary Shelley</p>
     <div class="ty">
-    Novel, 2009
+    Novel, 1818
     </div>
   </div>
 </div>
@@ -174,20 +202,14 @@ body {
 <div class="sum">
 <div class="sumtext">
 <h2>Summary</h2>
-J.K. Rowling's screenwriting debut is captured in this exciting hardcover edition of the Fantastic Beasts and Where to Find Them screenplay.
-<br/>
-When Magizoologist Newt Scamander arrives in New York, he intends his stay to be just a brief stopover. However, when his magical case is misplaced and some of Newt's fantastic beasts escape, it spells trouble for everyone…
-<br/>
-Fantastic Beasts and Where to Find Them marks the screenwriting debut of J.K. Rowling, author of the beloved and internationally bestselling Harry Potter books. Featuring a cast of remarkable characters, this is epic, adventure-packed storytelling at its very best.
-<br/>
-Whether an existing fan or new to the wizarding world, this is a perfect addition to any reader's bookshelf.
-</div>
-<div id="spacer"></div>
+Frankenstein; or, The Modern Prometheus is a novel written by English author Mary Shelley (1797–1851) that tells the story of Victor Frankenstein, a young scientist who creates a grotesque, sapient creature in an unorthodox scientific experiment. Shelley started writing the story when she was 18, and the first edition of the novel was published anonymously in London on 1 January 1818, when she was 20. Her name first appeared on the second edition, published in France in 1823.
 </div>
 </div>
 
+<div id="spacer"></div>
+
 <div id="bottombanner">
-<button class="read">
+<button class="read" onclick="readFrank()">
 Read
 </button>
 </div>
