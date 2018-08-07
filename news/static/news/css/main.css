@@ -4,12 +4,116 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
-#arrow {
-  height: 5vh;
-  width: 8vw;
+.icon {
+  height: 3vh;
+  width: 5vw;
 }
 body {
   background: url("/static/news/img/transLitBackground.png") no-repeat fixed center;
   background-size: cover;
   height: 100vh;
+}
+
+h2 {
+  font-family: 'Raleway';
+  font-size: 80px;
+}
+
+h4 {
+  font-family: 'Raleway';
+  font-size: 60px;
+  font-weight: 500;
+}
+
+h5 {
+  font-family: 'Poppins';
+  font-size: 48px;
+  font-weight: 500;
+  margin-top: 2vh;
+  margin-bottom: 0;
+}
+
+.belowButtons {
+  margin-left: 4vw;
+}
+
+.routeLabel {
+  margin-left: 2vh;
+  margin-bottom: 3vh;
+  margin-top: 9vh;
+}
+.stationSelect {
+  width: 92vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: white;
+}
+.leftStationSelect {
+  display: flex;
+  align-items: center;
+}
+.rightStationSelect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 2vw;
+  margin-top: 1vh;
+  margin-bottom: 3vh;
+}
+
+.station {
+  height: 12vh;
+  border-bottom: 1px solid gray;
+  width: 60vw;
+}
+
+.stationSelectSpace {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stationName {
+  width: 50vw;
+  font-family: 'Raleway';
+  font-size: 48px;
+  font-weight: 300;
+  margin-right: 15px !important;
+}
+
+.stationArrow {
+  float: right;
+}
+
+.startToFinish {
+  width: 70px;
+}
+
+.shadowed {
+  box-shadow: 7px 7px 23px grey;
+  border-radius: 30px;
+}
+
+.trainTime {
+  margin-left: 3vw;
+  font-family: "Poppins";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeLabel {
+  margin: 2vw;
+}
+
+.trainSelect {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.topButtons img {
+  margin-left: 50px;
+  margin-top: 50px;
+  width: 100px;
+  height: 100px;
 }

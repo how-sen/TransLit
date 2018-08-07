@@ -6,15 +6,51 @@
 	<head>
 		<title>Route Selection</title>
 		<link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,500i,600,700,800,900" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="{% static '/news/css/main.css' %}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	</head>
   <body id = "route">
 		<div class = "topButtons">
-			<a href = {% url 'homescreen' %} >
-      	<img id ="arrow" src="https://png.icons8.com/windows/1600/left.png">
+			<a href = {% url 'welcome' %} >
+      	<img class ="backButton" src="https://png.icons8.com/windows/1600/left.png">
       </a>
 		</div>
+		<div class = "belowButtons">
 
+			<h2> Select your Route </h2>
+
+			<h4 class = "routeLabel"> Stations </h4>
+			<div class = "stationSelect shadowed">
+				<div class = "leftStationSelect">
+					<img class = "startToFinish" src = "{% static '/news/img/startToFinish.png' %}">
+				</div>
+				<div class = "rightStationSelect">
+					<div class = "station">
+						<h5> Start </h5>
+						<div class = "stationSelectSpace">
+							<p class = "stationName"> Downtown Berkeley</p>
+							<img class = "icon stationArrow" src=" https://png.icons8.com/android/50/000000/forward.png">
+						</div>
+					</div>
+					<div class = "station">
+						<h5> Stop </h5>
+						<div class = "stationSelectSpace">
+							<p class = "stationName"> Embarcadero</p>
+							<img class = "icon stationArrow" src=" https://png.icons8.com/android/50/000000/forward.png">
+						</div>
+					</div>
+				</div>
+			</div>
+			<h4 class = "routeLabel"> Trains </h4>
+			<div class = "trainSelect">
+				<div class = "trainTime shadowed">
+					<h5 class = "timeLabel"> 10:30pm </h5>
+				</div>
+				<div class = "trainTime shadowed">
+					<h5 class = "timeLabel"> 10:45pm </h5>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
