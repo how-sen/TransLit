@@ -4,94 +4,148 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900|Raleway:100,200,300,400,500,500i,600,700,800,900" rel="stylesheet">
+<link rel = "stylesheet" type = "text/css" href = "{% static '/news/css/main.css' %}"/>
 <style>
 
-body{
-  background-color:#e6ffff
-}
 .button1 {
+    margin-top:20px;
+    margin-right: 20px;
     float: right;
     display:block;
-    width:70px;
-    height:70px;
+    width:50px;
+    height:50px;
     line-height:50px;
     border: 2px solid #f5f5f5;
     border-radius: 50%;
     color:#f5f5f5;
     text-align:center;
     text-decoration:none;
-    background: #464646;
     box-shadow: 0 0 3px gray;
     font-size:15px;
     font-weight:bold;
 }
 
-.container {
+.routebutton {
+    margin-left: 20px;
+    margin-top: 20px;
     display: inline-block;
     cursor: pointer;
 }
+
+.icon {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+}
+
+.proicon {
+  position: relative;
+  width: 44px;
+  height: 42px;
+  right:5px;
+  top:1px;
+  border-radius: 80%;
+}
+
 .title{
-  font-style:italic;
-  font-size:40px;
+  margin-left: 20px;
+  font-family: 'Raleway-bold', sans-serif;
+  font-size:25px;
 }
 
-.bar1, .bar2, .bar3 {
-    width: 35px;
-    height: 5px;
-    background-color: #333;
-    margin: 6px 0;
-    transition: 0.4s;
+#description {
+  margin-left: 25px;
+  font-family: 'Raleway-bold', sans-serif;
+  font-size: 15px;
 }
 
-.change .bar1 {
-    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-    transform: rotate(-45deg) translate(-9px, 6px);
-}
-
-.change .bar2 {opacity: 0;}
-
-.change .bar3 {
-    -webkit-transform: rotate(45deg) translate(-8px, -8px);
-    transform: rotate(45deg) translate(-8px, -8px);
-}
 .topnav input[type=text] {
-  padding: 6px;
-  margin-top: 8px;
+  padding: 10px;
+  height: 30px;
+  width: 80vw;
   font-size: 17px;
   border: none;
+  text-indent: 20px;
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  -moz-box-shadow:     3px 4px #ccc;
+  -webkit-box-shadow:  3px 4px #ccc;
+  box-shadow:          3px 4px #ccc;
 }
 
-.topnav .search-container button {
-  padding: 6px 10px;
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#glass {
+  position: absolute;
+  left: 40px;
+  width: 20px;
+  height: 20px;
+}
+
+#glassimage {
+  height: 20px;
+  width: 20px;
+}
+
+/* .topnav .search-container button {
+  display: flex;
+  margin-left: 10px;
+  padding: 5px 5px;
   margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
+  margin-bottom: 8px;
+  width: 35px;
+  height: 35px;
   font-size: 17px;
   border: none;
   cursor: pointer;
-}
-#recommanded{
- margin:30px
+} */
+.category{
+font-family: 'Poppins', sans-serif;
+margin-left: 40px;
+height: 40px;
+ /* margin:30px */
  }
  #image1,#image2{
-   margin:40px;
+   display: flex;
+   margin-top:10px;
+   margin-left:30px;
+   margin-right:30px;
  }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 300px) {
   .topnav .search-container {
     float: none;
   }
-  .topnav a, .topnav input[type=text], .topnav .search-container button {
+  /* .topnav a, .topnav input[type=text], .topnav .search-container button {
     float: none;
     display: block;
     text-align: left;
     width: 100%;
     margin: 0;
     padding: 14px;
-  }
+  } */
   .topnav input[type=text] {
     border: 1px solid #ccc;
   }
+}
+
+.bookshelf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shelf {
+  height: 10px;
+  background-color: white;
+  width: 80vw;
+  box-shadow: 1px 1px 3px gray;
+  border: 1px solid gray;
 }
 
 </style>
@@ -99,12 +153,10 @@ body{
 <body>
 
 <div>
-  <div class="container" onclick="myFunction(this)">
-    <div class="bar1"></div>
-    <div class="bar2"></div>
-    <div class="bar3"></div>
+  <div class="routebutton" onclick="myFunction(this)">
+      <img class="icon" src="https://images.vexels.com/media/users/3/128911/isolated/preview/765f9af1f35f52220df2f8e0ec475adf-train-travel-round-icon-by-vexels.png">
   </div>
-  <button class="button1">profile</button>
+  <button class="button1"><img class="proicon" src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/29597562_1867459793264019_7838150815566230796_n.jpg?_nc_cat=0&oh=7ec3a456f938ee4fd7cd2919cb8c2d11&oe=5C0C19D6"></button>
 </div>
 
 <br/>
@@ -112,41 +164,43 @@ body{
   Good Morning, Eric!
 </div>
 <div>
-<p>
-  whatever you want to say.....
+<p id="description">
+  What do you feel like reading today?
 </p>
 </div>
 <div class="topnav">
   <div class="search-container">
+    <div id="glass">
+      <img id="glassimage" src="https://cdn2.iconfinder.com/data/icons/filled-icons/493/Search-512.png" style="height:20px;position:absolute">
+    </div>
     <form action="/action_page.php">
-    	<button type="submit">Search</button>
-      	<input type="text" placeholder="Find Book.." name="search">
+      <input type="text" placeholder="Find Book.." name="search">
     </form>
   </div>
 </div>
-<div id="recommanded">
- <p>
- RECOMMANDED
- </p>
- </div>
+<div class="category"><br>
+ RECOMMENDED
+</div>
 <div id="image1">
- <img src="https://i.pinimg.com/564x/43/b0/a1/43b0a10e35078d5bbbf85c7b483b94f4.jpg" style ="
- height: 90px">
- <img src="https://i.pinimg.com/564x/53/99/dc/5399dcdfdfdc2650241fa21883f4deb1.jpg" style="height:90px">
-  <img src="https://i.pinimg.com/564x/31/1f/df/311fdf81e1b6ca9433826fcfbafc8d20.jpg" style="height:90px">
+ <img id="dracula" src="https://lh4.googleusercontent.com/AaAFi7Q-P9JJ_QRz3tMZq4F_F46PKJ_wjszGgplci8MrKIv7HqMtZ65dt0cL6YEeEObOSXl07vSY1-rI3RzuwU6F_EEIBgM3s8SFVuPw4x-ZyUXks5202tt23rfI2BkYmPAx9BTG" style ="
+ height: 130px;width:90px; margin:10px">
+ <img id="raven" src="https://lh6.googleusercontent.com/KV9NleDn05jKY_Qdm0DHzyww5rM9CMFmLZFkwkhF2Pn7DkkaZLhnDL9ltur-CU72IGFHTx_4kBKHGVNAzgGxHeF4ONeqHtboaj8eef5O9gscFQjHaUHmjXMHqyi3zp9qR6zMKQBh" style="height:130px;width:90px; margin:10px">
+<img id="frank" src="https://lh6.googleusercontent.com/1Rwrtz7QPdamQJ2MxEhlAdiIIHndTRsC_9OBiaMIHuzp-Z1dPNbW0Nr2ucm-L9kVuEiiH_M9nyN_slcCTHk12GGE17oFKCFIEx2-hrqBHzw_KQ5xxqF2-iJqZ1hBDUbgcD5wuhKY" style="height:130px;width:90px; margin:10px">
+ </div>
+ <div class="bookshelf"><div class="shelf"></div></div>
+ <div class="category"><br>
+  POPULAR
  </div>
  <div id="image2">
- <img src="https://i.pinimg.com/564x/bb/ed/c4/bbedc4415c15501943de782e36227da0.jpg" style ="
- height: 90px">
- <img src="https://i.pinimg.com/564x/05/50/78/0550789babfef46723cac64b79fb9fb9.jpg" style="height:90px">
-  <img src="https://i.pinimg.com/564x/16/92/8c/16928cd3be7d297d2afbb05daaf6b3f3.jpg" style ="
- height: 90px">
+ <img id="finn" src="https://lh4.googleusercontent.com/GO8ZEx5SXgWWOSj9gP3oqVvhwmzTZTIfwSquyVu4YasbofNR7QTUzL9vO5UCudL6jjmDTq1j_zGHTdnfw4-Btq4HOFrBfOcq2FwRkaf5Qgpu72DebKHhpcL3YCnhxhgqRWtPT-Wj" style="height:130px;width:90px; margin:10px">
+ <img id="sawyer" src="https://lh4.googleusercontent.com/PNFkPzwtHfo7ze-5_x3VsxtEGBMruY3JBbmGHQpYBOpO0y_v4HoXZ8NeYaE-XIEI0q4nPTTn8UYBtJ-oU2QXguPsx1tbL8C16ACnAsD0eT5vzB_Dcq6U5bsmZNQnkchTVVS_LvH6" style="height:130px;width:90px; margin:10px">
+ <img id="alice" src="https://lh3.googleusercontent.com/6V8j1hWvuVzLeAtYJ5qeHw8s37XZUPDtRk16ykB80bAgyzlZs-B56rFU6pRiIc2jxQYEvLV4GGfL7gQQMXx-U8JtXUR7TzigI5rVUtv_zRQ9b6ZrP26G2KlFrKIH88amJX5HbLGC" style="height:130px;width:90px; margin:10px">
  </div>
-
+ <div class="bookshelf"><div class="shelf"></div></div>
 
 <script>
 function myFunction(x) {
-    x.classList.toggle("change");
+    document.location.href = "http://127.0.0.1:8000/news/route";
 }
 </script>
 
