@@ -10,7 +10,6 @@
 <script>
 function fillIn() {
       var x = window.location.href.slice(-1);
-      console.log(x)
       $("#coverimage").empty();
       $("#title").empty();
       $("#author").empty();
@@ -81,7 +80,8 @@ function readFrank() {
   background-color: transparent;
   width: 100vw;
   height: 12.5vh;
-  top: 0%;
+  left: 0%;
+  top: 12.5vh;
   margin: 0px;
   padding: 0px;
 }
@@ -128,7 +128,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 0px;
+  top: 0%;
   left: 0px;
   width: 100vw;
   height: 12.5vh;
@@ -143,6 +143,7 @@ body {
   justify-content: space-around;
   width: 50vw;
   height: 10vh;
+  top: 0%;
 }
 
 #back {
