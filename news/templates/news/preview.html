@@ -4,7 +4,67 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900|Raleway:100,200,300,400,500,500i,600,700,800,900" rel="stylesheet">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script>
+function fillIn() {
+      var x = window.location.href.slice(-1);
+      console.log(x)
+      $("#coverimage").empty();
+      $("#title").empty();
+      $("#author").empty();
+      $("#typedate").empty();
+      $("#booksum").empty();
+      if (x == 1) {
+        coverimage.innerHTML += "<img id='dracula' src='https://lh4.googleusercontent.com/AaAFi7Q-P9JJ_QRz3tMZq4F_F46PKJ_wjszGgplci8MrKIv7HqMtZ65dt0cL6YEeEObOSXl07vSY1-rI3RzuwU6F_EEIBgM3s8SFVuPw4x-ZyUXks5202tt23rfI2BkYmPAx9BTG' style ='height:200px;width:150px; margin:10px'>";
+        title.innerHTML += "Dracula";
+        author.innerHTML += "Bram Stoker";
+        typedate.innerHTML += "Novel, 1897";
+        booksum.innerHTML += "Dracula is an 1897 Gothic horror novel by Irish author Bram Stoker. It introduced Count Dracula, and established many conventions of subsequent vampire fantasy. The novel tells the story of Dracula's attempt to move from Transylvania to England so that he may find new blood and spread the undead curse, and of the battle between Dracula and a small group of men and a woman led by Professor Abraham Van Helsing.";
+      }
+
+      if (x == 2) {
+        coverimage.innerHTML += "<img id='raven' src='https://lh6.googleusercontent.com/KV9NleDn05jKY_Qdm0DHzyww5rM9CMFmLZFkwkhF2Pn7DkkaZLhnDL9ltur-CU72IGFHTx_4kBKHGVNAzgGxHeF4ONeqHtboaj8eef5O9gscFQjHaUHmjXMHqyi3zp9qR6zMKQBh' style='height:200px;width:150px; margin:10px'>";
+        title.innerHTML += "The Raven";
+        author.innerHTML += "Edgar Allan Poe";
+        typedate.innerHTML += "Poem, 1845";
+        booksum.innerHTML += "'The Raven' is a narrative poem by American writer Edgar Allan Poe. First published in January 1845, the poem is often noted for its musicality, stylized language, and supernatural atmosphere. It tells of a talking raven's mysterious visit to a distraught lover, tracing the man's slow fall into madness. The lover, often identified as being a student, is lamenting the loss of his love, Lenore. Sitting on a bust of Pallas, the raven seems to further distress the protagonist with its constant repetition of the word 'Nevermore'. The poem makes use of folk, mythological, religious, and classical references.";
+      }
+
+      if (x == 3) {
+        coverimage.innerHTML += "<img src='https://lh6.googleusercontent.com/1Rwrtz7QPdamQJ2MxEhlAdiIIHndTRsC_9OBiaMIHuzp-Z1dPNbW0Nr2ucm-L9kVuEiiH_M9nyN_slcCTHk12GGE17oFKCFIEx2-hrqBHzw_KQ5xxqF2-iJqZ1hBDUbgcD5wuhKY'style='width:150px;height:200px;'>";
+        title.innerHTML += "Frankenstein";
+        author.innerHTML += "Mary Shelley";
+        typedate.innerHTML += "Novel, 1818";
+        booksum.innerHTML += "Frankenstein; or, The Modern Prometheus is a novel written by English author Mary Shelley (1797–1851) that tells the story of Victor Frankenstein, a young scientist who creates a grotesque, sapient creature in an unorthodox scientific experiment. Shelley started writing the story when she was 18, and the first edition of the novel was published anonymously in London on 1 January 1818, when she was 20. Her name first appeared on the second edition, published in France in 1823.";
+      }
+
+      if (x == 4) {
+        coverimage.innerHTML += "<img id='finn' src='https://lh4.googleusercontent.com/GO8ZEx5SXgWWOSj9gP3oqVvhwmzTZTIfwSquyVu4YasbofNR7QTUzL9vO5UCudL6jjmDTq1j_zGHTdnfw4-Btq4HOFrBfOcq2FwRkaf5Qgpu72DebKHhpcL3YCnhxhgqRWtPT-Wj' style='height:200px;width:150px; margin:10px'>";
+        title.innerHTML += "Huckleberry Finn";
+        author.innerHTML += "Mark Twain";
+        typedate.innerHTML += "Novel, 1884";
+        booksum.innerHTML += "Adventures of Huckleberry Finn (or, in more recent editions, The Adventures of Huckleberry Finn) is a novel by Mark Twain, first published in the United Kingdom in December 1884 and in the United States in February 1885. Commonly named among the Great American Novels, the work is among the first in major American literature to be written throughout in vernacular English, characterized by local color regionalism. It is told in the first person by Huckleberry 'Huck' Finn, the narrator of two other Twain novels (Tom Sawyer Abroad and Tom Sawyer, Detective) and a friend of Tom Sawyer. It is a direct sequel to The Adventures of Tom Sawyer.";
+      }
+
+      if (x == 5) {
+        coverimage.innerHTML += "<img id='sawyer' src='https://lh4.googleusercontent.com/PNFkPzwtHfo7ze-5_x3VsxtEGBMruY3JBbmGHQpYBOpO0y_v4HoXZ8NeYaE-XIEI0q4nPTTn8UYBtJ-oU2QXguPsx1tbL8C16ACnAsD0eT5vzB_Dcq6U5bsmZNQnkchTVVS_LvH6' style='height:200px;width:150px; margin:10px'>";
+        title.innerHTML += "Tom Sawyer";
+        author.innerHTML += "Mark Twain";
+        typedate.innerHTML += "Novel, 1876";
+        booksum.innerHTML += "The Adventures of Tom Sawyer by Mark Twain is an 1876 novel about a young boy growing up along the Mississippi River. It is set in the 1840s in the fictional town of St. Petersburg, inspired by Hannibal, Missouri, where Twain lived as a boy. In the novel Tom has several adventures, often with his friend, Huck. One such adventure, Tom's whitewashing of a fence, has been adapted into paintings and referenced in other pieces of popular culture. Originally a commercial failure the book ended up being the best selling of any of Twain's works during his lifetime.";
+      }
+
+      if (x == 6) {
+        coverimage.innerHTML += "<img id='alice' src='https://lh3.googleusercontent.com/6V8j1hWvuVzLeAtYJ5qeHw8s37XZUPDtRk16ykB80bAgyzlZs-B56rFU6pRiIc2jxQYEvLV4GGfL7gQQMXx-U8JtXUR7TzigI5rVUtv_zRQ9b6ZrP26G2KlFrKIH88amJX5HbLGC' style='height:200px;width:150px; margin:10px'>";
+        title.innerHTML += "Alice in Wonderland";
+        author.innerHTML += "Lewis Carroll";
+        typedate.innerHTML += "Novel, 1865";
+        booksum.innerHTML += "Alice's Adventures in Wonderland (commonly shortened to Alice in Wonderland) is an 1865 novel written by English author Charles Lutwidge Dodgson under the pseudonym Lewis Carroll. It tells of a girl named Alicefalling through a rabbit hole into a fantasy world populated by peculiar, anthropomorphic creatures. The tale plays with logic, giving the story lasting popularity with adults as well as with children. It is considered to be one of the best examples of the literary nonsense genre. Its narrative course and structure, characters and imagery have been enormously influential in both popular culture and literature, especially in the fantasy genre.";
+      }
+}
+
 function goBack() {
     window.history.back()
 }
@@ -14,6 +74,17 @@ function readFrank() {
 }
 </script>
 <style>
+
+#topspacer {
+  z-index: -1;
+  position: relative;
+  background-color: transparent;
+  width: 100vw;
+  height: 12.5vh;
+  top: 0%;
+  margin: 0px;
+  padding: 0px;
+}
 
 .button1 {
     float: right;
@@ -53,10 +124,10 @@ body {
 }
 
 .topbanner {
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
   top: 0px;
   width: 100%;
   height: 10vh;
@@ -156,15 +227,13 @@ body {
   align-items: center;
   justify-content: space-around;
   position: fixed;
-  background-color: #f2ffe6;
-  border: 1px solid black;
+  background-color: #02B395;
   width: 100vw;
   height: 10vh;
   bottom: 0%;
 }
 
 #spacer {
-  display: absolute;
   position: relative;
   background-color: #F1F1F1;
   width: 100vw;
@@ -176,7 +245,8 @@ body {
 
 </style>
 </head>
-<body>
+<body onload="fillIn()">
+    <div id="topspacer"></div>
     <div class="topbanner">
       <div id="back" class="topregion">
         <button id="bckbutton" class = "button2" onclick="goBack()"><img id="backicon" class ="icon" src="https://png.icons8.com/windows/1600/left.png"></button>
@@ -188,21 +258,18 @@ body {
       </div>
     </div>
 <div class="display">
-  <div class="image">
-     <img src="https://lh6.googleusercontent.com/1Rwrtz7QPdamQJ2MxEhlAdiIIHndTRsC_9OBiaMIHuzp-Z1dPNbW0Nr2ucm-L9kVuEiiH_M9nyN_slcCTHk12GGE17oFKCFIEx2-hrqBHzw_KQ5xxqF2-iJqZ1hBDUbgcD5wuhKY"style="width:150px;height:200px;"></div>
+  <div id="coverimage" class="image"></div>
   <div class= "word">
-    <h2>Frankenstein</h2>
-    <p>Mary Shelley</p>
-    <div class="ty">
-    Novel, 1818
-    </div>
+    <h2 id="title"></h2>
+    <p id="author"></p>
+    <div id="typedate"></div>
   </div>
 </div>
 <div class="summary">
 <div class="sum">
 <div class="sumtext">
 <h2>Summary</h2>
-Frankenstein; or, The Modern Prometheus is a novel written by English author Mary Shelley (1797–1851) that tells the story of Victor Frankenstein, a young scientist who creates a grotesque, sapient creature in an unorthodox scientific experiment. Shelley started writing the story when she was 18, and the first edition of the novel was published anonymously in London on 1 January 1818, when she was 20. Her name first appeared on the second edition, published in France in 1823.
+<p id="booksum"></p>
 </div>
 </div>
 
@@ -213,6 +280,7 @@ Frankenstein; or, The Modern Prometheus is a novel written by English author Mar
 Read
 </button>
 </div>
+
 
 </body>
 </html>

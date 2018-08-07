@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900|Raleway:100,200,300,400,500,500i,600,700,800,900" rel="stylesheet">
 <link rel = "stylesheet" type = "text/css" href = "{% static '/news/css/main.css' %}"/>
+
 <style>
 
 .button1 {
@@ -92,18 +93,6 @@
   width: 20px;
 }
 
-/* .topnav .search-container button {
-  display: flex;
-  margin-left: 10px;
-  padding: 5px 5px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  width: 35px;
-  height: 35px;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-} */
 .category{
 font-family: 'Poppins', sans-serif;
 margin-left: 40px;
@@ -123,14 +112,7 @@ height: 40px;
   .topnav .search-container {
     float: none;
   }
-  /* .topnav a, .topnav input[type=text], .topnav .search-container button {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-  } */
+
   .topnav input[type=text] {
     border: 1px solid #ccc;
   }
@@ -184,30 +166,31 @@ height: 40px;
  RECOMMENDED
 </div>
 <div id="image1">
- <button style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="dracula" src="https://lh4.googleusercontent.com/AaAFi7Q-P9JJ_QRz3tMZq4F_F46PKJ_wjszGgplci8MrKIv7HqMtZ65dt0cL6YEeEObOSXl07vSY1-rI3RzuwU6F_EEIBgM3s8SFVuPw4x-ZyUXks5202tt23rfI2BkYmPAx9BTG" style ="height: 130px;width:90px; margin:10px"></button>
- <button style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="raven" src="https://lh6.googleusercontent.com/KV9NleDn05jKY_Qdm0DHzyww5rM9CMFmLZFkwkhF2Pn7DkkaZLhnDL9ltur-CU72IGFHTx_4kBKHGVNAzgGxHeF4ONeqHtboaj8eef5O9gscFQjHaUHmjXMHqyi3zp9qR6zMKQBh" style="height:130px;width:90px; margin:10px"></button>
- <button onclick="frankButton()" id="frankbutton" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="frank" src="https://lh6.googleusercontent.com/1Rwrtz7QPdamQJ2MxEhlAdiIIHndTRsC_9OBiaMIHuzp-Z1dPNbW0Nr2ucm-L9kVuEiiH_M9nyN_slcCTHk12GGE17oFKCFIEx2-hrqBHzw_KQ5xxqF2-iJqZ1hBDUbgcD5wuhKY" style="height:130px;width:90px;"></button>
+ <button onclick="readBook(1)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="dracula" src="https://lh4.googleusercontent.com/AaAFi7Q-P9JJ_QRz3tMZq4F_F46PKJ_wjszGgplci8MrKIv7HqMtZ65dt0cL6YEeEObOSXl07vSY1-rI3RzuwU6F_EEIBgM3s8SFVuPw4x-ZyUXks5202tt23rfI2BkYmPAx9BTG" style ="height: 130px;width:90px; margin:10px"></button>
+ <button onclick="readBook(2)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="raven" src="https://lh6.googleusercontent.com/KV9NleDn05jKY_Qdm0DHzyww5rM9CMFmLZFkwkhF2Pn7DkkaZLhnDL9ltur-CU72IGFHTx_4kBKHGVNAzgGxHeF4ONeqHtboaj8eef5O9gscFQjHaUHmjXMHqyi3zp9qR6zMKQBh" style="height:130px;width:90px; margin:10px"></button>
+ <button onclick="readBook(3)" id="frankbutton" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="frank" src="https://lh6.googleusercontent.com/1Rwrtz7QPdamQJ2MxEhlAdiIIHndTRsC_9OBiaMIHuzp-Z1dPNbW0Nr2ucm-L9kVuEiiH_M9nyN_slcCTHk12GGE17oFKCFIEx2-hrqBHzw_KQ5xxqF2-iJqZ1hBDUbgcD5wuhKY" style="height:130px;width:90px;"></button>
  </div>
  <div class="bookshelf"><div class="shelf"></div></div>
  <div class="category"><br>
   POPULAR
  </div>
  <div id="image2">
- <img id="finn" src="https://lh4.googleusercontent.com/GO8ZEx5SXgWWOSj9gP3oqVvhwmzTZTIfwSquyVu4YasbofNR7QTUzL9vO5UCudL6jjmDTq1j_zGHTdnfw4-Btq4HOFrBfOcq2FwRkaf5Qgpu72DebKHhpcL3YCnhxhgqRWtPT-Wj" style="height:130px;width:90px; margin:10px">
- <img id="sawyer" src="https://lh4.googleusercontent.com/PNFkPzwtHfo7ze-5_x3VsxtEGBMruY3JBbmGHQpYBOpO0y_v4HoXZ8NeYaE-XIEI0q4nPTTn8UYBtJ-oU2QXguPsx1tbL8C16ACnAsD0eT5vzB_Dcq6U5bsmZNQnkchTVVS_LvH6" style="height:130px;width:90px; margin:10px">
- <img id="alice" src="https://lh3.googleusercontent.com/6V8j1hWvuVzLeAtYJ5qeHw8s37XZUPDtRk16ykB80bAgyzlZs-B56rFU6pRiIc2jxQYEvLV4GGfL7gQQMXx-U8JtXUR7TzigI5rVUtv_zRQ9b6ZrP26G2KlFrKIH88amJX5HbLGC" style="height:130px;width:90px; margin:10px">
+ <button onclick="readBook(4)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="finn" src="https://lh4.googleusercontent.com/GO8ZEx5SXgWWOSj9gP3oqVvhwmzTZTIfwSquyVu4YasbofNR7QTUzL9vO5UCudL6jjmDTq1j_zGHTdnfw4-Btq4HOFrBfOcq2FwRkaf5Qgpu72DebKHhpcL3YCnhxhgqRWtPT-Wj" style="height:130px;width:90px; margin:10px"></button>
+ <button onclick="readBook(5)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="sawyer" src="https://lh4.googleusercontent.com/PNFkPzwtHfo7ze-5_x3VsxtEGBMruY3JBbmGHQpYBOpO0y_v4HoXZ8NeYaE-XIEI0q4nPTTn8UYBtJ-oU2QXguPsx1tbL8C16ACnAsD0eT5vzB_Dcq6U5bsmZNQnkchTVVS_LvH6" style="height:130px;width:90px; margin:10px"></button>
+ <button onclick="readBook(6)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="alice" src="https://lh3.googleusercontent.com/6V8j1hWvuVzLeAtYJ5qeHw8s37XZUPDtRk16ykB80bAgyzlZs-B56rFU6pRiIc2jxQYEvLV4GGfL7gQQMXx-U8JtXUR7TzigI5rVUtv_zRQ9b6ZrP26G2KlFrKIH88amJX5HbLGC" style="height:130px;width:90px; margin:10px"></button>
  </div>
  <div class="bookshelf"><div class="shelf"></div></div>
 
-<script>
-function myFunction(x) {
-    document.location.href = "http://127.0.0.1:8000/news/route";
-}
+ <script>
+ function myFunction(x) {
+     document.location.href = "http://127.0.0.1:8000/news/route";
+ }
 
-function frankButton() {
-    document.location.href = "http://127.0.0.1:8000/news/preview"
-}
-</script>
+ function readBook(x) {
+     document.location.href = "http://127.0.0.1:8000/news/preview" + "?" + String(x)
+ }
+
+ </script>
 
 </body>
 </html>
