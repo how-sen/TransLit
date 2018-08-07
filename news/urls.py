@@ -11,6 +11,5 @@ urlpatterns = [
   path('read', views.read, name = 'read'),
   path('preview', views.preview, name = 'preview'),
   path('welcome', views.welcome, name = 'welcome'),
-  path('swipe', views.swipe, name = 'swipe'),
 
 ]

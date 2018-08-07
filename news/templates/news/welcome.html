@@ -8,13 +8,18 @@
 <link rel = "stylesheet" type = "text/css" href = "{% static '/news/css/main.css' %}"/>
 
 <style>
-body{
-  background: url("https://cdn.discordapp.com/attachments/476259721364504587/476259773617143819/Screen_Shot_2018-08-06_at_10.25.16_PM.png") no-repeat fixed center;
-  background-size: 130%;
+
+#topbar {
+  position: relative;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 10vh;
+  width: 100%;
 }
+
 .button1 {
-    margin-top:20px;
-    margin-right: 20px;
     float: right;
     display:block;
     width:50px;
@@ -31,8 +36,6 @@ body{
 }
 
 .routebutton {
-    margin-left: 20px;
-    margin-top: 20px;
     display: inline-block;
     cursor: pointer;
 }
@@ -141,10 +144,11 @@ height: 40px;
 </head>
 <body>
 
-<div>
+<div id="topbar">
   <div class="routebutton" onclick="myFunction(this)">
       <img class="icon" src="https://images.vexels.com/media/users/3/128911/isolated/preview/765f9af1f35f52220df2f8e0ec475adf-train-travel-round-icon-by-vexels.png">
   </div>
+  <div></div><div></div>
   <button class="button1"><img class="proicon" src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/29597562_1867459793264019_7838150815566230796_n.jpg?_nc_cat=0&oh=7ec3a456f938ee4fd7cd2919cb8c2d11&oe=5C0C19D6"></button>
 </div>
 
