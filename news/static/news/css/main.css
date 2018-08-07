@@ -100,6 +100,7 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 6vh;
 }
 
 .timeLabel {
@@ -109,11 +110,62 @@ h5 {
 .trainSelect {
   display: flex;
   flex-wrap: wrap;
-
+  height: 20vh;
 }
+
+#from, #to {
+  font-family: 'Raleway';
+  font-weight: 300;
+  font-size: 60px;
+  overflow-y: auto;
+}
+
+.stationList > *{
+  width: 90vw;
+}
+
 .topButtons img {
   margin-left: 50px;
   margin-top: 50px;
   width: 100px;
   height: 100px;
+}
+
+.stationList {
+     list-style-type:none;
+     margin:25px 0 0 0;
+     padding:0;
+}
+
+.stationList li {
+    margin:0 5px 0 0;
+    height: 100px;
+    position:relative;
+}
+
+.stationList label, .stationList input {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+.stationList input[type="radio"] {
+    opacity:0.011;
+    z-index:100;
+}
+
+.stationList input[type="radio"]:checked + label {
+    background:green;
+}
+
+.stationList label {
+     padding:5px;
+     border-bottom:1px solid gray;
+    z-index:90;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
