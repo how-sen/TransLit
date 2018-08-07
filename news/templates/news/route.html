@@ -43,23 +43,117 @@
 				</div>
 			</div>
 			<h4 class = "routeLabel shifting"> Trains </h4>
-			<div class = "trainSelect">
-				<div class = "trainTime shadowed">
+			<div class = "trainSelect" id = "from">
+				<ul class = "stationList" id = "fromList">
+				</ul>
+			</div>
+			<div class = "trainSelect" id = "to">
+				<ul class = "stationList" id = "toList">
+				</ul>
+			</div>
+			<div class = "trainSelect" id = "trains">
+			<!--	<div class = "trainTime shadowed">
 					<h5 class = "timeLabel"> 10:30pm </h5>
 				</div>
 				<div class = "trainTime shadowed">
 					<h5 class = "timeLabel"> 10:45pm </h5>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<script type = "text/javascript">
+			$("#from").hide();
+			$("#to").hide();
+			$("#trains").hide();
+			retrieveStations();
 			function start() {
-				console.log($(".shifting"))
-				$(".shifting").innerHTML = "Start"
+				$(".shifting").text("Start");
+				$("#to").hide();
+				$("#trains").hide()
+				$("#from").show();
 			}
 			function stop() {
-				$(".shifting").innerHTML = "Stop"
+				$(".shifting").text("Stop");
+				$('#from').hide();
+				$("#trains").hide()
+				$("#to").show();
+			}
+
+			var myTimer = window.setInterval(function() {
+				var origin = $("input[name='departing']:checked").val();
+				var destination = $("input[name='arriving']:checked").val();
+				if (origin != undefined && destination != undefined) {
+					retrieveTrains(origin, destination);
+					$(".shifting").text("Trains");
+					$("#trains").show();
+					$("#from").hide();
+					$("#to").hide();
+					clearInterval(myTimer);
+				}
+			}, 100)
+			function retrieveStations() {
+				var url = 'http://api.bart.gov/api/stn.aspx?cmd=stns&key=MW9S-E7SL-26DU-VV8V&json=y'
+				$.getJSON([url], function(response) {
+					var stations = response.root.stations.station;
+					console.log(stations)
+					for (var i = 0; i < stations.length; i++) {
+						let listItem = document.createElement('li');
+						let radButton = document.createElement('input');
+						let label = document.createElement('label');
+						radButton.id = stations[i]["abbr"] + "d";
+						label.setAttribute('for', stations[i]["abbr"] + "d");
+						label.innerHTML = stations[i]["name"];
+						radButton.type = "radio";
+						radButton.name = "departing";
+						radButton.value = stations[i]["abbr"];
+						listItem.append(radButton);
+						listItem.appendChild(label);
+						$("#fromList").append(listItem);
+						let listItem1 = document.createElement('li');
+						let toButton = radButton.cloneNode(true);
+						let label1 = label.cloneNode(true);
+						toButton.name = "arriving";
+						toButton.id = stations[i]["abbr"] + "a";
+						label1.setAttribute('for', stations[i]["abbr"] + "a");
+						listItem1.append(toButton);
+						listItem1.append(label1);
+						$("#toList").append(listItem1);
+	 				}
+				})
+			}
+
+			function retrieveTrains(origin, destination) {
+				console.log(origin);
+				console.log(destination);
+				var url = 'http://api.bart.gov/api/sched.aspx?cmd=depart&a=4&b=0&orig='+ origin +'&dest=' + destination + '&key=MW9S-E7SL-26DU-VV8V&json=y';
+	      $.getJSON([url], function(response) {
+					console.log(response);
+					var trips = response.root.schedule.request.trip;
+					for (var i = 0; i < trips.length; i++){
+						let ii = i;
+						var div = document.createElement('div');
+						var h5 = document.createElement('h5');
+						h5.classList.add("timeLabel");
+						div.classList.add("trainTime");
+						div.classList.add("shadowed");
+						div.append(h5);
+						h5.innerHTML = trips[i]["@origTimeMin"];
+						div.onclick = function() {
+							window.location.href = '/news/library?' + trips[ii]["@destTimeDate"] + '?' + trips[ii]["@destTimeMin"];
+						}
+						$("#trains").append(div);
+					}
+	      })
 			}
 		</script>
 	</body>
 </html>
+
+<!-- Sample Train Times:
+
+<div class = "trainTime shadowed">
+	<h5 class = "timeLabel"> 10:30pm </h5>
+</div>
+<div class = "trainTime shadowed">
+	<h5 class = "timeLabel"> 10:45pm </h5>
+</div>
+-->
