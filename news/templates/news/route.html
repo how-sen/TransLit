@@ -28,21 +28,21 @@
 				<div class = "rightStationSelect">
 					<div class = "station">
 						<h5> Start </h5>
-						<div class = "stationSelectSpace">
+						<div onclick = "start()" class = "stationSelectSpace">
 							<p class = "stationName"> Downtown Berkeley</p>
 							<img class = "icon stationArrow" src=" https://png.icons8.com/android/50/000000/forward.png">
 						</div>
 					</div>
 					<div class = "station">
 						<h5> Stop </h5>
-						<div class = "stationSelectSpace">
+						<div onclick = "stop()" class = "stationSelectSpace">
 							<p class = "stationName"> Embarcadero</p>
 							<img class = "icon stationArrow" src=" https://png.icons8.com/android/50/000000/forward.png">
 						</div>
 					</div>
 				</div>
 			</div>
-			<h4 class = "routeLabel"> Trains </h4>
+			<h4 class = "routeLabel shifting"> Trains </h4>
 			<div class = "trainSelect">
 				<div class = "trainTime shadowed">
 					<h5 class = "timeLabel"> 10:30pm </h5>
@@ -52,5 +52,14 @@
 				</div>
 			</div>
 		</div>
+		<script type = "text/javascript">
+			function start() {
+				console.log($(".shifting"))
+				$(".shifting").innerHTML = "Start"
+			}
+			function stop() {
+				$(".shifting").innerHTML = "Stop"
+			}
+		</script>
 	</body>
 </html>
