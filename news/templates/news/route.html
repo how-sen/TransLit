@@ -29,20 +29,20 @@
 					<div class = "station">
 						<h5> Start </h5>
 						<div onclick = "start()" class = "stationSelectSpace">
-							<p class = "stationName"> Downtown Berkeley</p>
+							<p class = "stationName" id = "stationNameFrom"> </p>
 							<img class = "icon stationArrow" src=" https://png.icons8.com/android/50/000000/forward.png">
 						</div>
 					</div>
 					<div class = "station">
 						<h5> Stop </h5>
 						<div onclick = "stop()" class = "stationSelectSpace">
-							<p class = "stationName"> Embarcadero</p>
+							<p class = "stationName" id = "stationNameTo"> </p>
 							<img class = "icon stationArrow" src=" https://png.icons8.com/android/50/000000/forward.png">
 						</div>
 					</div>
 				</div>
 			</div>
-			<h4 class = "routeLabel shifting"> Trains </h4>
+			<h4 class = "routeLabel shifting"> </h4>
 			<div class = "trainSelect" id = "from">
 				<ul class = "stationList" id = "fromList">
 				</ul>
@@ -81,6 +81,18 @@
 			var myTimer = window.setInterval(function() {
 				var origin = $("input[name='departing']:checked").val();
 				var destination = $("input[name='arriving']:checked").val();
+				if (origin != undefined) {
+					$("input[name='departing']:checked").each(function() {
+        		var idVal = $(this).attr("id");
+        		$("#stationNameFrom").text($("label[for='"+idVal+"']").text());
+    			});
+				}
+				if (destination != undefined) {
+					$("input[name='arriving']:checked").each(function() {
+        		var idVal = $(this).attr("id");
+        		$("#stationNameTo").text($("label[for='"+idVal+"']").text());
+    			});
+				}
 				if (origin != undefined && destination != undefined) {
 					retrieveTrains(origin, destination);
 					$(".shifting").text("Trains");

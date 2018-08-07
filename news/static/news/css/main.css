@@ -75,6 +75,8 @@ h5 {
 
 .stationName {
   width: 50vw;
+  height: 65px;
+  overflow-y: hidden;
   font-family: 'Raleway';
   font-size: 48px;
   font-weight: 300;
