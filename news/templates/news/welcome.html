@@ -219,7 +219,7 @@ height: 40px;
  }
 
  function readBook(x) {
-     document.location.href = "http://127.0.0.1:8000/news/preview" + "?" + String(x)
+     document.location.href = window.location.href.replace("welcome", "preview") + "?" + String(x)
  }
 
  </script>

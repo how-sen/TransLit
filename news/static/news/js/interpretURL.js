@@ -3,7 +3,7 @@ function progress(timeleft, timetotal, $element) {
   console.log(timeleft);
   var progressBarWidth = timeleft * $element.width() / timetotal;
   console.log(Math.floor(timeleft/3600) + ":"+  Math.floor(timeleft / 60 % 60) + ":"+ timeleft%60);
-  var minutes = Math.floor(timeleft / 60 % 60)
+  var minutes = Math.floor(timeleft / 60 % 60) + " minutes, "
   var seconds = timeleft%60
   if (minutes == 0) {
     minutes = "";
@@ -13,7 +13,7 @@ function progress(timeleft, timetotal, $element) {
   if (seconds < 10) {
     seconds = "0" + seconds;
   }
-  $element.find('div').animate({ width: progressBarWidth }, 500).html(minutes + "minutes, " + seconds + "seconds");
+  $element.find('div').animate({ width: progressBarWidth }, 500).html(minutes + seconds + "seconds");
   if (timeleft == 60) {
     alert("Only a minute left!");
   }

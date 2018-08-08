@@ -4,7 +4,6 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900|Raleway:100,200,300,400,500,500i,600,700,800,900" rel="stylesheet">
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
@@ -69,7 +68,7 @@ function goBack() {
 }
 
 function readFrank() {
-    document.location.href = "http://127.0.0.1:8000/news/read"
+    document.location.href = window.location.href.replace("preview", "read");
 }
 </script>
 <style>
@@ -259,20 +258,28 @@ body {
   justify-content: center;
 }
 
-#proBarDiv {
-  width: 100%;
+#progressBar {
+  width: 100vw;
+  font-family: 'Raleway';
+  font-size: 25px;
+  margin: 10px auto;
+  height: 40px;
+  background-color: #0A5F44;
   position: fixed;
-  bottom: 0%;
-  background-color: grey;
-  padding: 3px;
+  top: 11vh;
+  left: 0;
+  z-index:1000;
 }
 
-#proBar {
-   background-color: green;
-   width: 40%; /* Adjust with JavaScript */
-   height: 15px;
+#progressBar div {
+  height: 100%;
+  text-align: right;
+  padding-top: 10px;
+  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+  width: 0;
+  background-color: #02b33d;
+  box-sizing: border-box;
 }
-
 </style>
 </head>
 <body onload="fillIn()">
@@ -308,7 +315,7 @@ body {
 <div id="bottombanner">
   <div><button class="read" onclick="readFrank()">Read</button></div>
 
-<div id="centerDiv"><div id="proBarDiv"><div id="proBar"></div></div></div>
+<script type = "text/javascript" src = "{% static '/news/js/interpretURL.js' %}" /> </script>
 </div>
 
 

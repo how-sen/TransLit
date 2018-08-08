@@ -174,35 +174,24 @@ h5 {
 
 #progressBar {
   width: 100vw;
-  margin: 10px auto;
-  height: 22px;
+  font-family: 'Raleway';
+  font-size: 25px;
+  margin: 0 auto;
+  height: 40px;
   background-color: #0A5F44;
   position: absolute;
   bottom: 0;
+  left: 0;
+  z-index:1000;
 }
 
 #progressBar div {
   height: 100%;
   text-align: right;
-  padding: 0 10px;
+  padding-top: 10px;
+  padding-right: 10px;
   line-height: 22px; /* same as #progressBar height if we want text middle aligned */
   width: 0;
-  background-color: #CBEA00;
-  box-sizing: border-box;
-}
-#progressBar {
-  width: 100vw;
-  margin: 10px auto;
-  height: 22px;
-  background-color: #0A5F44;
-}
-
-#progressBar div {
-  height: 100%;
-  text-align: right;
-  padding: 0 10px;
-  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
-  width: 0;
-  background-color: #CBEA00;
+  background-color: #02B395;
   box-sizing: border-box;
 }
