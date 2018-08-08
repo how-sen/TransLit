@@ -171,3 +171,38 @@ h5 {
     justify-content: center;
     align-items: center;
 }
+
+#progressBar {
+  width: 100vw;
+  margin: 10px auto;
+  height: 22px;
+  background-color: #0A5F44;
+  position: absolute;
+  bottom: 0;
+}
+
+#progressBar div {
+  height: 100%;
+  text-align: right;
+  padding: 0 10px;
+  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+  width: 0;
+  background-color: #CBEA00;
+  box-sizing: border-box;
+}
+#progressBar {
+  width: 100vw;
+  margin: 10px auto;
+  height: 22px;
+  background-color: #0A5F44;
+}
+
+#progressBar div {
+  height: 100%;
+  text-align: right;
+  padding: 0 10px;
+  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+  width: 0;
+  background-color: #CBEA00;
+  box-sizing: border-box;
+}

@@ -1,31 +1,41 @@
-  function createCountdown(dateString, timeString, dateString1, timeString1) {
-    var timer = document.createElement('div');
-    $("body").append(timer)
-    timer.setAttribute("id","timer");
-    var countDownDate = Date.parse(dateString +  " " +timeString);
-    // Update the count down every 1 second
-    x = setInterval(function() {
-      // Get todays date and time
-      var now = new Date().getTime();
 
-      // Find the distance between now and the count down date
-      var distance = countDownDate - now;
-
-      // Time calculations for days, hours, minutes and seconds
-      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      // Display the result in the element with id="timer"
-      document.getElementById("timer").innerHTML = hours + "h "
-      + minutes + "m " + seconds + "s ";
-
-      // If the count down is finished, write some text
-      if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("timer").innerHTML = "SHOULD HAVE ARRIVED";
-      }
-    }, 1000);
+function progress(timeleft, timetotal, $element) {
+  console.log(timeleft);
+  var progressBarWidth = timeleft * $element.width() / timetotal;
+  console.log(Math.floor(timeleft/3600) + ":"+  Math.floor(timeleft / 60 % 60) + ":"+ timeleft%60);
+  var minutes = Math.floor(timeleft / 60 % 60)
+  var seconds = timeleft%60
+  if (minutes == 0) {
+    minutes = "";
+  } else if (minutes < 10) {
+    minutes = "0" + minutes;
   }
-  var components = window.location.href.split("?");
-  createCountdown(components[1], components[2].replace("%20", " "), components[3], components[4].replace("%20", " "));
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  $element.find('div').animate({ width: progressBarWidth }, 500).html(minutes + "minutes, " + seconds + "seconds");
+  if (timeleft == 60) {
+    alert("Only a minute left!");
+  }
+  if(timeleft > 0) {
+      setTimeout(function() {
+          progress(timeleft - 1, timetotal, $element);
+      }, 1000);
+  } else {
+    alert("We calculate that you should've just arrived!")
+    $element.hide();
+  }
+};
+var components = window.location.href.split("?");
+if (components.length > 2) {
+  var progressBar = document.createElement('div');
+  progressBar.setAttribute('id', 'progressBar');
+  var div = document.createElement('div');
+  progressBar.append(div);
+  $("body").append(progressBar);
+  var countDownDate = Date.parse(components[1] +  " " + components[2].replace("%20", " "));
+  console.log(components[1] +  " " + components[2].replace("%20", " "));
+  var now = new Date().getTime();
+  var distance = Math.floor((countDownDate - now)/1000);
+  progress(distance, distance, $('#progressBar'));
+}
