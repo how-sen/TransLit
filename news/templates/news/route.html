@@ -61,7 +61,6 @@
 				</div> -->
 			</div>
 		</div>
-		<script type = "text/javascript" src = "{% static '/news/js/interpretURL.js' %}" />
 		<script type = "text/javascript">
 			$("#from").hide();
 			$("#to").hide();
@@ -152,7 +151,7 @@
 						div.append(h5);
 						h5.innerHTML = trips[i]["@origTimeMin"];
 						div.onclick = function() {
-							window.location.href = "{% url 'welcome' %}" + '?' + trips[ii]["@destTimeDate"] + '?' + trips[ii]["@destTimeMin"];
+							window.location.href = "{% url 'welcome' %}" + '?' + trips[ii]["@destTimeDate"] + '?' + trips[ii]["@destTimeMin"] + '?' + Date.now();
 						}
 						$("#trains").append(div);
 					}
