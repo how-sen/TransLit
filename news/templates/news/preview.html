@@ -233,6 +233,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-direction: column;
   position: fixed;
   background-color: #02B395;
   width: 110%;
@@ -250,6 +251,26 @@ body {
   bottom: 0%;
   margin: 0px;
   padding: 0px;
+}
+
+#centerDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#proBarDiv {
+  width: 100%;
+  position: fixed;
+  bottom: 0%;
+  background-color: grey;
+  padding: 3px;
+}
+
+#proBar {
+   background-color: green;
+   width: 40%; /* Adjust with JavaScript */
+   height: 15px;
 }
 
 </style>
@@ -285,10 +306,11 @@ body {
 <div id="spacer"></div>
 
 <div id="bottombanner">
-<button class="read" onclick="readFrank()">
-Read
-</button>
+  <div><button class="read" onclick="readFrank()">Read</button></div>
+
+<div id="centerDiv"><div id="proBarDiv"><div id="proBar"></div></div></div>
 </div>
+
 
 
 </body>
