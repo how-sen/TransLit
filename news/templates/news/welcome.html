@@ -15,10 +15,20 @@
   top: 0%;
   left: 0%;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction:col;
+  align-items: center; 
+  justify-content: space-around; 
   height: 12.5vh;
   width: 100%;
+
+
+}
+
+#dp {
+  width: 50px;
+  height: 40px;  
+  transform:scale(1.5);
+  margin-right:-50px;
 }
 
 #topspacer {
@@ -53,8 +63,12 @@
     cursor: pointer;
 }
 
+.zach {
+
+}
+
 .icon {
-  margin-left: -13px;
+
   width: 40px;
   height: 40px;
   padding: 5px;
@@ -115,6 +129,7 @@
   width: 20px;
 }
 
+
 .category{
 font-family: 'Poppins', sans-serif;
 margin-left: 25px;
@@ -147,10 +162,10 @@ height: 40px;
 }
 
 .shelf {
-  height: 10px;
-  background-color: white;
+  height: 15px;
+  background-color: #F1F1F1;
   width: 85vw;
-  box-shadow: 1px 1px 3px gray;
+  box-shadow: 4px 4px 3px gray;
   /* border: 1px solid gray; */
   margin-bottom: 0;
 }
@@ -171,8 +186,9 @@ height: 40px;
   <div class="routebutton" onclick="myFunction(this)">
       <img class="icon" src="https://images.vexels.com/media/users/3/128911/isolated/preview/765f9af1f35f52220df2f8e0ec475adf-train-travel-round-icon-by-vexels.png">
   </div>
-  <div></div><div></div>
-  <button class="button1"><img class="proicon" src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/29597562_1867459793264019_7838150815566230796_n.jpg?_nc_cat=0&oh=7ec3a456f938ee4fd7cd2919cb8c2d11&oe=5C0C19D6"></button>
+  <div class = "zach"><img id = "dp" src="{% static 'news/img/zach.gif' %}"> </div>
+
+  <!--<button class="button1"><img class="proicon" src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/29597562_1867459793264019_7838150815566230796_n.jpg?_nc_cat=0&oh=7ec3a456f938ee4fd7cd2919cb8c2d11&oe=5C0C19D6"></button> -->
 </div>
 
 <br/>
@@ -197,19 +213,19 @@ height: 40px;
 <div class="category"><br>
  RECOMMENDED
 </div>
-<div id="image1">
- <button onclick="readBook(1)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="dracula" src="https://lh4.googleusercontent.com/AaAFi7Q-P9JJ_QRz3tMZq4F_F46PKJ_wjszGgplci8MrKIv7HqMtZ65dt0cL6YEeEObOSXl07vSY1-rI3RzuwU6F_EEIBgM3s8SFVuPw4x-ZyUXks5202tt23rfI2BkYmPAx9BTG" style ="height:130px;width:90px; margin:10px"></button>
- <button onclick="readBook(2)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="raven" src="https://lh6.googleusercontent.com/KV9NleDn05jKY_Qdm0DHzyww5rM9CMFmLZFkwkhF2Pn7DkkaZLhnDL9ltur-CU72IGFHTx_4kBKHGVNAzgGxHeF4ONeqHtboaj8eef5O9gscFQjHaUHmjXMHqyi3zp9qR6zMKQBh" style="height:130px;width:90px; margin:10px"></button>
- <button onclick="readBook(3)" id="frankbutton" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="frank" src="https://lh6.googleusercontent.com/1Rwrtz7QPdamQJ2MxEhlAdiIIHndTRsC_9OBiaMIHuzp-Z1dPNbW0Nr2ucm-L9kVuEiiH_M9nyN_slcCTHk12GGE17oFKCFIEx2-hrqBHzw_KQ5xxqF2-iJqZ1hBDUbgcD5wuhKY" style="height:130px;width:90px;margin:10px"></button>
+<div class = "book" id="image1">
+ <button onclick="readBook(1)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img class = "book" id="dracula" src="https://lh4.googleusercontent.com/AaAFi7Q-P9JJ_QRz3tMZq4F_F46PKJ_wjszGgplci8MrKIv7HqMtZ65dt0cL6YEeEObOSXl07vSY1-rI3RzuwU6F_EEIBgM3s8SFVuPw4x-ZyUXks5202tt23rfI2BkYmPAx9BTG" style ="height:130px;width:90px; margin:10px"></button>
+ <button onclick="readBook(2)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img class = "book" id="raven" src="https://lh6.googleusercontent.com/KV9NleDn05jKY_Qdm0DHzyww5rM9CMFmLZFkwkhF2Pn7DkkaZLhnDL9ltur-CU72IGFHTx_4kBKHGVNAzgGxHeF4ONeqHtboaj8eef5O9gscFQjHaUHmjXMHqyi3zp9qR6zMKQBh" style="height:130px;width:90px; margin:10px"></button>
+ <button onclick="readBook(3)" class = "book" id="frankbutton" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="frank" src="https://lh6.googleusercontent.com/1Rwrtz7QPdamQJ2MxEhlAdiIIHndTRsC_9OBiaMIHuzp-Z1dPNbW0Nr2ucm-L9kVuEiiH_M9nyN_slcCTHk12GGE17oFKCFIEx2-hrqBHzw_KQ5xxqF2-iJqZ1hBDUbgcD5wuhKY" style="height:130px;width:90px;margin:10px"></button>
  </div>
  <div class="bookshelf"><div class="shelf"></div></div>
  <div class="category"><br>
   POPULAR
  </div>
  <div id="image2">
- <button onclick="readBook(4)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="finn" src="https://lh4.googleusercontent.com/GO8ZEx5SXgWWOSj9gP3oqVvhwmzTZTIfwSquyVu4YasbofNR7QTUzL9vO5UCudL6jjmDTq1j_zGHTdnfw4-Btq4HOFrBfOcq2FwRkaf5Qgpu72DebKHhpcL3YCnhxhgqRWtPT-Wj" style="height:130px;width:90px; margin:10px"></button>
- <button onclick="readBook(5)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="sawyer" src="https://lh4.googleusercontent.com/PNFkPzwtHfo7ze-5_x3VsxtEGBMruY3JBbmGHQpYBOpO0y_v4HoXZ8NeYaE-XIEI0q4nPTTn8UYBtJ-oU2QXguPsx1tbL8C16ACnAsD0eT5vzB_Dcq6U5bsmZNQnkchTVVS_LvH6" style="height:130px;width:90px; margin:10px"></button>
- <button onclick="readBook(6)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img id="alice" src="https://lh3.googleusercontent.com/6V8j1hWvuVzLeAtYJ5qeHw8s37XZUPDtRk16ykB80bAgyzlZs-B56rFU6pRiIc2jxQYEvLV4GGfL7gQQMXx-U8JtXUR7TzigI5rVUtv_zRQ9b6ZrP26G2KlFrKIH88amJX5HbLGC" style="height:130px;width:90px; margin:10px"></button>
+ <button onclick="readBook(4)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img class = "book" id="finn" src="https://lh4.googleusercontent.com/GO8ZEx5SXgWWOSj9gP3oqVvhwmzTZTIfwSquyVu4YasbofNR7QTUzL9vO5UCudL6jjmDTq1j_zGHTdnfw4-Btq4HOFrBfOcq2FwRkaf5Qgpu72DebKHhpcL3YCnhxhgqRWtPT-Wj" style="height:130px;width:90px; margin:10px"></button>
+ <button onclick="readBook(5)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img class = "book" id="sawyer" src="https://lh4.googleusercontent.com/PNFkPzwtHfo7ze-5_x3VsxtEGBMruY3JBbmGHQpYBOpO0y_v4HoXZ8NeYaE-XIEI0q4nPTTn8UYBtJ-oU2QXguPsx1tbL8C16ACnAsD0eT5vzB_Dcq6U5bsmZNQnkchTVVS_LvH6" style="height:130px;width:90px; margin:10px"></button>
+ <button onclick="readBook(6)" style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"><img class = "book" id="alice" src="https://lh3.googleusercontent.com/6V8j1hWvuVzLeAtYJ5qeHw8s37XZUPDtRk16ykB80bAgyzlZs-B56rFU6pRiIc2jxQYEvLV4GGfL7gQQMXx-U8JtXUR7TzigI5rVUtv_zRQ9b6ZrP26G2KlFrKIH88amJX5HbLGC" style="height:130px;width:90px; margin:10px"></button>
  </div>
  <div class="bookshelf"><div class="shelf"></div></div>
 
