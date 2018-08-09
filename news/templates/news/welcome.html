@@ -16,19 +16,25 @@
   left: 0%;
   display: flex;
   flex-direction:col;
-  align-items: center; 
-  justify-content: space-around; 
+  align-items: center;
+  justify-content: space-around;
   height: 12.5vh;
   width: 100%;
+}
 
-
+.topregion {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 50vw;
+  height: 10vh;
+  top: 0%;
 }
 
 #dp {
-  width: 50px;
-  height: 40px;  
-  transform:scale(1.5);
-  margin-right:-50px;
+  position: absolute;
+  width: 90px;
+  height: 70px;
 }
 
 #topspacer {
@@ -59,29 +65,22 @@
 }
 
 .routebutton {
-    display: inline-block;
-    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .zach {
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .icon {
-
   width: 40px;
   height: 40px;
-  padding: 5px;
 }
 
-.proicon {
-  position: relative;
-  width: 44px;
-  height: 42px;
-  right:5px;
-  top:1px;
-  border-radius: 80%;
-}
 
 .title{
   margin-left: 25px;
@@ -183,10 +182,14 @@ height: 40px;
 <div id="topspacer"></div>
 
 <div id="topbar">
+  <div class="topregion">
   <div class="routebutton" onclick="myFunction(this)">
       <img class="icon" src="https://images.vexels.com/media/users/3/128911/isolated/preview/765f9af1f35f52220df2f8e0ec475adf-train-travel-round-icon-by-vexels.png">
+  </div><div></div>
   </div>
+  <div class="topregion">
   <div class = "zach"><img id = "dp" src="{% static 'news/img/zach.gif' %}"> </div>
+  </div>
 
   <!--<button class="button1"><img class="proicon" src="https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/29597562_1867459793264019_7838150815566230796_n.jpg?_nc_cat=0&oh=7ec3a456f938ee4fd7cd2919cb8c2d11&oe=5C0C19D6"></button> -->
 </div>
