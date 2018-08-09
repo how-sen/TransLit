@@ -67,8 +67,8 @@ function goBack() {
     window.history.back()
 }
 
-function readFrank() {
-    document.location.href = window.location.href.replace("preview", "read");
+function read(x) {
+    document.location.href = window.location.href.replace("welcome", "read") + "?" + String(window.location.href.slice(-1);
 }
 </script>
 <style>
@@ -169,7 +169,7 @@ body {
 #mark, #like {
   position: fixed;
   height: 30px;
-  length: 30px;
+  width: 30px;
 }
 
 #marklike {
@@ -313,7 +313,7 @@ body {
 <div id="spacer"></div>
 
 <div id="bottombanner">
-  <div><button class="read" onclick="readFrank()">Read</button></div>
+  <div><button class="read" onclick="read()">Read</button></div>
 
 <script type = "text/javascript" src = "{% static '/news/js/interpretURL.js' %}" /> </script>
 </div>
